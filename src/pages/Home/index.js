@@ -2,10 +2,14 @@ import "./home.css";
 import React, { useState } from "react";
 import ImageHome from "../../assets/Back-to-School-Illustration-removebg-preview.png";
 import ImageAbout from "../../assets/2.jpg";
-import Slider1 from "../../assets/img1.png";
+import Slider1 from "../../assets/img1.jpg";
 import Slider2 from "../../assets/img2.jpg";
 import Slider3 from "../../assets/img3.jpg";
-import faixada from "../../assets/faixada.jpg";
+import Box1 from "../../assets/box-1.png"
+import MusicIcon from "../../assets/music-icon.png"
+import BaleIcon from "../../assets/bale-icon.png"
+import FinanceIcon from "../../assets/finance-icon.png"
+import TeacherIcon from "../../assets/teacher-icon.png"
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,11 +27,12 @@ export default function Home() {
       <div className="bg">
         <div className="headline">
           <div className="text-area">
-            <h1>A melhor escola para seu filho</h1>
+            <h1>A Melhor Escola Para Seu Filho</h1>
             <span>
-              Escola particular do maternal ao quinto ano! Escola particular do
-              maternal ao quinto ano! Escola particular do maternal ao quinto
-              ano! Escola particular do maternal ao quinto ano!
+              Bem-vindo à escola Viramundo, um lugar onde o aprendizado ganha
+              vida e as crianças são incentivados a explorar seus interesses,
+              desenvolver suas habilidades e preparar-se para um futuro
+              brilhante.
             </span>
             <button>Ler mais</button>
           </div>
@@ -36,97 +41,74 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className="about">
-        <div className="text-area">
-          <h1>Quem Somos Nós?</h1>
+      <section className="diferencials">
+        <span className="title">Programas Educacionais</span>
+        <h2>Aqui Seu Filho Tem Acesso:</h2>
+        <div className="card-diferencials" id="dif1">
+          <img src={MusicIcon} alt="music-icon"></img>
+          <strong>Aulas de Inglês</strong>
           <span>
-            A Escola Municipal Viramundo foi fundada em 1985 e desde então vem
-            se dedicando à educação de qualidade para crianças e jovens em
-            Formiga. Sua missão é oferecer uma educação integral e inclusiva,
-            valorizando a diversidade e estimulando o desenvolvimento integral
-            dos alunos.
+            Aprender uma nova língua pode abrir muitas portas no futuro
           </span>
         </div>
-        <div className="img-area">
-          <img src={ImageAbout} alt="sobre"></img>
+        <div className="card-diferencials" id="dif2">
+          <img src={BaleIcon}></img>
+          <strong>Aulas de Balé</strong>
+          <span>A partir do primeiro período da Educação Infantil</span>
         </div>
-      </section>
-
-      <section className="education">
-        <span className="title">Programas Educacionais</span>
-        <h2>A Educação de Qualidade Que Seu Filho Precisa</h2>
-        <div class="card">
-          <div class="card-img"></div>
-          <div class="card-info">
-            <p class="text-title">Educação Infantil </p>
-            <p class="text-body">
-              Neste tipo de educação, as crianças são estimuladas - através de
-              atividades lúdicas, brincadeiras e jogos
-            </p>
-          </div>
-          <div class="card-footer">
-            <div className="footer-info">
-              <span class="text-title">Idade</span>
-              <span>2 a 9 anos</span>
-            </div>
-            <div className="footer-info">
-              <span class="text-title">Horário</span>
-              <span>13h as 17h</span>
-            </div>
-          </div>
+        <div className="card-diferencials" id="dif3">
+          <img src={FinanceIcon}></img>
+          <strong>Educação Financeira</strong>
+          <span>
+            Extremamente importante para as crianças se tornarem adultos com uma
+            mentalidade financeira saudável.
+          </span>
         </div>
-        <div class="card">
-          <div class="card-img" id="ensino-fundamental"></div>
-          <div class="card-info">
-            <p class="text-title">Ensino Fundamental 1</p>
-            <p class="text-body">
-              Neste tipo de educação, as crianças são estimuladas - através de
-              atividades lúdicas, brincadeiras e jogos
-            </p>
-          </div>
-          <div class="card-footer">
-            <div className="footer-info">
-              <span class="text-title">Idade</span>
-              <span>2 a 9 anos</span>
-            </div>
-            <div className="footer-info">
-              <span class="text-title">Horário</span>
-              <span>13h as 17h</span>
-            </div>
-          </div>
+        <div className="card-diferencials" id="dif4">
+          <img src={TeacherIcon}></img>
+          <strong>Os Melhores Professores</strong>
+          <span>
+            Professores com experiência e capacitados para ensinar seu filho.
+          </span>
         </div>
       </section>
 
       <div className="bg-about-infos">
         <section className="about-infos">
-          <div className="text-area">
-            <h1>Um Pouco mais Sobre nós</h1>
-
-            <div className="container-slider">
-              <button id="prev-button" onClick={prevSlide}>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </button>
-              <div className="container-images">
-                <img
-                  src={Slider1}
-                  alt="girl"
-                  className={`slider ${currentSlide === 0 ? "on" : ""}`}
-                />
-                <img
-                  src={Slider2}
-                  alt="girl"
-                  className={`slider ${currentSlide === 1 ? "on" : ""}`}
-                />
-                <img
-                  src={Slider3}
-                  alt="girl"
-                  className={`slider ${currentSlide === 2 ? "on" : ""}`}
-                />
-              </div>
-              <button id="next-button" onClick={nextSlide}>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </button>
+          <div className="container-slider">
+            <button id="prev-button" onClick={prevSlide}>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+            <div className="container-images">
+              <img
+                src={Slider1}
+                alt="girl"
+                className={`slider ${currentSlide === 0 ? "on" : ""}`}
+              />
+              <img
+                src={Slider2}
+                alt="girl"
+                className={`slider ${currentSlide === 1 ? "on" : ""}`}
+              />
+              <img
+                src={Slider3}
+                alt="girl"
+                className={`slider ${currentSlide === 2 ? "on" : ""}`}
+              />
             </div>
+            <button id="next-button" onClick={nextSlide}>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+
+          <span className="title">Programas Educacionais</span>
+          <h2>Um Pouco Sobre nós</h2>
+          <div className="text-area">
+            <p>
+              Nossa missão é educar para a vida, oferecendo um ambiente de
+              aprendizado seguro, inclusivo e estimulante, onde cada aluno é
+              valorizado e respeitado por quem é.
+            </p>
           </div>
         </section>
       </div>
